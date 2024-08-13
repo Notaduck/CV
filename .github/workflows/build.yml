@@ -23,5 +23,5 @@ jobs:
           prerelease: true
           name: nightly
           tag_name: nightly
-          files: main.pdf
+          files: template.pdf
           fail_on_unmatched_files: true
