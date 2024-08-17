@@ -55,10 +55,14 @@
 \definecolor{cvsidecolor}{HTML}{E7E7E7}
 \definecolor{cvsectioncolor}{HTML}{0395DE}
 \definecolor{cvsubsectioncolor}{HTML}{4D4D4D}
+
+\definecolor{DarkGrayBlue}{HTML}{494e5f}
+\definecolor{Peach}{HTML}{ffe7d4}
+\definecolor{slate}{HTML}{494e5f}
 % set default values
 \colorlet{maincolor}{cvblue}
 \colorlet{sidecolor}{cvsidecolor}
-\colorlet{sidetextcolor}{black}
+\colorlet{sidetextcolor}{Peach}
 \colorlet{sectioncolor}{cvsectioncolor}
 \colorlet{subsectioncolor}{cvsubsectioncolor}
 \colorlet{itemtextcolor}{black!90}
@@ -90,7 +94,7 @@
 \setlength{\profilepicsize}{0.7\sidebarwidth}
 \DeclareOptionX{profilepicsize}{\setlength{\profilepicsize}{#1}}
 \newlength\profilepicborderwidth%
-\setlength{\profilepicborderwidth}{3.5pt}
+\setlength{\profilepicborderwidth}{.0pt}
 \DeclareOptionX{profilepicborderwidth}{\setlength{\profilepicborderwidth}{#1}}
 \newcommand*{\profilepicstyle}{}
 \DeclareOptionX{profilepicstyle}{\renewcommand{\profilepicstyle}{#1}}
@@ -237,7 +241,7 @@
 % profile section color (sidebar/left column)
 \colorlet{pseccolor}{maincolor!90}
 % color used for all icon arguments
-\colorlet{iconcolor}{maincolor!90}
+\colorlet{iconcolor}{Peach}
 
 % color definitions for TikZ drawings
 \colorlet{wheelchartlabelcolor}{black}
@@ -264,9 +268,13 @@
 
 % section style for cv table headings in right column
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before>}[<after>]
+% \newcommand*{\cvsection}[1]{\section*{#1}}
+% \titleformat{\section}%
+% 	{\color{sectioncolor}\normalfont\bfseries\LARGE}{}{0pt}{}
+% \titlespacing*{\section}{0pt}{1.5ex}{1ex}
 \newcommand*{\cvsection}[1]{\section*{#1}}
 \titleformat{\section}%
-	{\color{sectioncolor}\normalfont\bfseries\LARGE}{}{0pt}{}
+  {\color{sectioncolor}\normalfont\bfseries\LARGE}{}{0pt}{}
 \titlespacing*{\section}{0pt}{1.5ex}{1ex}
 
 % grey subsection style for right column
@@ -279,8 +287,8 @@
 % abuse subsubsection as sidesection in left column
 \newcommand*{\sidesection}[1]{\subsubsection*{#1}}
 \titleformat{\subsubsection}%
-	{\color{pseccolor}\normalfont\sidesectionsize}{}{0pt}%
-	{\color{pseccolor}\sectionline}%
+	{\color{Peach}\normalfont\sidesectionsize}{}{0pt}%
+	{\color{Peach}\sectionline}%
 % set spaces before and after sidesections: <left><before><after>
 % "starred version kills the indentation of the paragraph following the title"
 \titlespacing*{\subsubsection}{0pt}{1ex}{1ex}
@@ -293,10 +301,10 @@
 \newcommand{\sidetext}[1]{\textcolor{sidetextcolor}{#1}}
 
 % style for name
-\newcommand*{\cvnameformat}{\Huge\color{maincolor}}
+\newcommand*{\cvnameformat}{\Huge\color{Peach}}
 
 % style for job title
-\newcommand*{\cvjobtitleformat}{\Large\color{black!80}}
+\newcommand*{\cvjobtitleformat}{\Large\color{Peach}}
 
 % mandatory personal information
 \newcommand*{\cvname}[1]{\renewcommand{\cvname}{#1}}
@@ -486,7 +494,7 @@
 	\hspace{#1} \cvicon{#2} ~ \sidetext{#3} \hfill%
 	\foreach \x in {1,...,#5}{%
 		\space%
-		{\ifnumgreater{\x}{#4}{\color{skillbg}}{\color{iconcolor}}% from etoolbox
+		{\ifnumgreater{\x}{#4}{\color{skillbg}}{\color{Peach}}% from etoolbox
 		% don't use totalheight; see https://tex.stackexchange.com/a/41014
 		\raisebox{0.5\height-0.4ex}{\scriptsize\faCircle}%
 		}
