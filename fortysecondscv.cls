@@ -385,13 +385,6 @@
 	\href{https://keyserver.ubuntu.com/pks/lookup?search=#2\&op=vindex\&fingerprint=on}{#1}%
 }}
 
-% TODO find a cleaner solution for consistent spacing
-\newcommand{\nameandjob}{%
-	{\cvnameformat\cvname}\par%
-	\setlength{\parskip}{2ex}
-	{\cvjobtitleformat\cvjobtitle}\par%
-	\setlength{\parskip}{1ex}
-}
 
 \newcommand{\nameandjobbeforepic}{%
 	\ifthenelse{\equal{\nameandjobposition}{before}}{%
