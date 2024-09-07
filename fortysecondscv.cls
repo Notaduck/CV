@@ -264,7 +264,7 @@
 
 % creates a rule after some text using remaining line width
 % usage: \xrfill[<raise>]{<width>}
-\newcommand*{\sectionline}[1]{#1~\xrfill[.5ex]{1pt}[pseccolor]}
+\newcommand*{\sectionline}[1]{#1~\xrfill[.5ex]{1pt}[Peach]}
 
 % section style for cv table headings in right column
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before>}[<after>]
@@ -288,7 +288,7 @@
 \newcommand*{\sidesection}[1]{\subsubsection*{#1}}
 \titleformat{\subsubsection}%
 	{\color{Peach}\normalfont\sidesectionsize}{}{0pt}%
-	{\color{Peach}\sectionline}%
+	{\color{Peach}\sectionline} % Changes the color of the horizontal line to Peach
 % set spaces before and after sidesections: <left><before><after>
 % "starred version kills the indentation of the paragraph following the title"
 \titlespacing*{\subsubsection}{0pt}{1ex}{1ex}
@@ -305,6 +305,17 @@
 
 % style for job title
 \newcommand*{\cvjobtitleformat}{\Large\color{Peach}}
+
+
+\newcommand{\nameandjob}{%
+    {\cvnameformat\cvname}\par%
+    \setlength{\parskip}{2ex}%
+    \vspace{0.4em}% Add space between job title and the line
+    {\Large\color{White}\cvjobtitle}\par% Use \Large and \color{Peach} to match the original settings
+    % \vspace{0.1em}% Add space between job title and the line
+    \noindent\color{Peach}\rule{\linewidth}{1pt}\par % Peach-colored horizontal line
+    \vspace{0.4em}% Add space after the line
+}
 
 % mandatory personal information
 \newcommand*{\cvname}[1]{\renewcommand{\cvname}{#1}}
@@ -524,16 +535,16 @@
 \newcommand{\chartlabel}[2][skillbg]{%
 	\begin{tikzpicture}
 	\node[
-		fill=#1!25, % interior color
-		anchor=base,
-		draw=#1, % line color
-		rounded corners,
-		inner xsep=1ex, % distance from left/right border to text
-		inner ysep=0.75ex, % distance top/bottom border to text
-		text height=1.5ex, % align text vertically in box (at least as resulting
-		text depth=.25ex   % effect)
-	]{\sidetext{#2}};%
+		% Remove the fill option to remove the background
+		draw=Peach, % Draw the border with the color defined by #1 (or skillbg by default)
+		rounded corners, % Keep the rounded corners
+		inner xsep=1ex, % Space between text and the border horizontally
+		inner ysep=0.75ex, % Space between text and the border vertically
+		text height=1.5ex, % Align text vertically in box
+		text depth=.25ex   % Vertical alignment correction
+	]{\sidetext{#2}}; % The label text
 	\end{tikzpicture}
+	\vspace{0.5ex} % Adds vertical spacing after each label
 }
 
 

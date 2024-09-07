@@ -21,6 +21,8 @@
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
 
+
+
 \documentclass[
 	a4paper,
 	% 9pt,
@@ -140,14 +142,63 @@
 % your name
 \cvname{Daniel Guldberg Aaes}
 % job title/career
-% \cvjobtitle{Panda Scientist,\\[0.2em] Panda of the Year}
-\cvjobtitle{Software Engineerr}
+\cvjobtitle{Software Engineer}
+
+
 
 %% optional information
 % profile picture
 \cvprofilepic{pics/profile.jpg}
 % logo picture
-% \cvlogopic{pics/logo_txt.png}
+
+
+\addtofrontsidebar{
+  \sidesection{Soft Skills}
+  \skill{\faLightbulb}{Knowledge-Driven and seeking In-
+    novation}
+  \skill{\faPrayingHands}{Considerate and thoughtful}
+
+  \sidesection{Skills}
+  \begin{sidebarminipage}
+    \begin{center}
+      \chartlabel{Python}
+      \chartlabel{FastAPI}
+      \chartlabel{Django}
+      \chartlabel{AWS}
+      \chartlabel{SQL}
+      \chartlabel{AI/ML}
+      \chartlabel{Data Analysis}
+      \chartlabel{Data pipelines}
+      \chartlabel{Docker}
+      \chartlabel{Streamlit/Dash}
+      \chartlabel{Linux}
+      \chartlabel{Ansible}
+      \chartlabel{CI/CD}
+      \chartlabel{Prometheus stack}
+    \end{center}
+  \end{sidebarminipage}
+
+
+
+    % Add contact details at the bottom
+  \sidesection{Social Network}
+  \begin{icontable}{2.5em}{1em}
+    \social{\faLinkedin}
+    {https://www.linkedin.com/in/jakobaaes}{linkedin.com/in/jakobaaes}
+    \social{\faGithub}
+    {https://github.com/jakob1379/}
+    {github.com/jakob1379/}
+  \end{icontable}
+
+  \sidesection{Contact}
+  \begin{icontable}{2.5em}{1em}
+    \personal{\faBirthdayCake}{July $24^{th}$, 1993}
+    \personal{\faMapMarker}{\href{https://www.google.com/maps/place/2400+København+NV}{København NV}}
+    \personal{\faPhone}{\href{tel:+4593978373}{+45 93 97 83 73}}
+    \personal{\faEnvelope}{\href{mailto:jakob1379@gmail.com}{jakob1379@gmail.com}}
+  \end{icontable}
+
+}
 
 % NOTE: ordering in sidebar will mimic the following order
 % date of birth
@@ -160,10 +211,6 @@
 \cvsite{https://guldberglab.info}
 % email address
 \cvmail{daniel@guldberglab.info}
-% pgp key
-% \cvkey{4096R/FF00FF00}{0xAABBCCDDFF00FF00}
-% any other custom entry
-% \cvcustomdata{\faFlag}{Chinese}
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 1st PAGE
@@ -289,7 +336,7 @@
 \cvsection{Education}
 \cvsubsection{Postgraduate Training}
 \begin{cvtable}[1.5]
-	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
+	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academyx}
 		{In-depth studies on the impact of bamboo nutrition for young pandas and
 		its relation to relaxing, sleeping and snoozing parts of the day.}
 	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
