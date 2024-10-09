@@ -5,23 +5,10 @@
 % Please visit https://github.com/PandaScience/FortySecondsCV for the most
 % recent version! For bugs or feature requests, please open a new issue on
 % github.
-%
-% Contributors:
-% https://github.com/PandaScience/FortySecondsCV/graphs/contributors
-%
-% Attributions
-% ------------
-% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
-%   (cspagnuolo@unisa.it), released under the MIT license and available under
-%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
-% * further attributions are indicated immediately before corresponding code
-
 
 %-------------------------------------------------------------------------------
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
-
-
 
 \documentclass[
 	a4paper,
@@ -61,11 +48,6 @@
 \colorlet{cvname}{DarkGrayBlue}
 \colorlet{sectioncolor}{DarkGrayBlue}
 
-
-% fine tune line spacing
-% \usepackage{setspace}
-% \setstretch{1.1}
-
 % improve word spacing and hyphenation
 \usepackage{microtype}
 \usepackage{ragged2e}
@@ -77,239 +59,89 @@
 \ifxetexorluatex
 	\usepackage{fontspec}
 	\defaultfontfeatures{Ligatures=TeX}
-	% \newfontfamily\headingfont[Path=fonts/]{segoeuib.ttf} % use local font
 \else
 	\usepackage[utf8]{inputenc}
 	\usepackage[T1]{fontenc}
 \fi
 
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \setmainfont{Montserrat Light} % Use Montserrat Light for body text
+  \newfontfamily\headingfont{Montserrat} % Use Montserrat for headings
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
 % use a sans serif font as default
 \usepackage[sfdefault]{ClearSans}
-% \usepackage[sfdefault]{noto}
-
-% multi-language CV XeLaTeX and polyglossia (should also work with LuaLaTeX)
-% NOTE: breaks \pointskill, \membership and some spacings
-% \ifxetexorluatex
-% 	\usepackage{polyglossia}
-% 	\newfontfamily\arabicfontsf[Script=Arabic,Scale=1.5]{Amiri}
-% 	\newfontfamily\englishfontsf{Clear Sans}
-% 	\setmainfont{Amiri}
-% 	\setdefaultlanguage{arabic}
-% 	\setotherlanguage{english}
-% \fi
-
-% enable mathematical syntax for some symbols like \varnothing
-\usepackage{amssymb}
-
-% bubble diagram configuration
-\usepackage{smartdiagram}
-\smartdiagramset{
-	% default font size is \large, so adjust to harmonize with sidebar layout
-	bubble center node font = \footnotesize,
-	bubble node font = \footnotesize,
-	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
-	bubble center node size = 0.4\sidebartextwidth,
-	bubble node size = 0.25\sidebartextwidth,
-	distance center/other bubbles = 1.5em,
-	% set center bubble color
-	bubble center node color = maincolor!70,
-	% define the list of colors usable in the diagram
-	set color list = {maincolor!10, maincolor!40,
-	maincolor!20, maincolor!60, maincolor!35},
-	% sets the opacity at which the bubbles are shown
-	bubble fill opacity = 0.8,
-}
-
-
-\usepackage{xcolor}
-\definecolor{Peach}{HTML}{ffe7d4}
-% \definecolor{slate}{HTML}{494e5f}
-
-
-\usepackage{tikz}
-\renewcommand*{\cvsection}[1]{%
-  \vspace{3pt}
-  \begin{tikzpicture}
-    \node[fill=Peach, text width=\linewidth, rounded corners=3pt, inner sep=5pt] {\color{slate}\normalfont\bfseries\LARGE #1};
-  \end{tikzpicture}
-  \vspace{8pt}
-}
 
 %-------------------------------------------------------------------------------
 %                            PERSONAL INFORMATION
 %-------------------------------------------------------------------------------
-%% mandatory information
 % your name
 \cvname{Daniel Guldberg Aaes}
 % job title/career
 \cvjobtitle{Software Engineer}
 
-
-
-%% optional information
 % profile picture
 \cvprofilepic{pics/profile.jpg}
-% logo picture
-
 
 \addtofrontsidebar{
   \sidesection{Soft Skills}
-  \skill{\faLightbulb}{Knowledge-Driven and seeking In-
-    novation}
+  \skill{\faLightbulb}{Knowledge-Driven and seeking Innovation}
   \skill{\faPrayingHands}{Considerate and thoughtful}
 
   \sidesection{Skills}
   \begin{sidebarminipage}
     \begin{center}
-      \chartlabel{Python}
-      \chartlabel{FastAPI}
-      \chartlabel{Django}
-      \chartlabel{AWS}
+      \chartlabel{Javascript}
+      \chartlabel{Typesciprt}
+      \chartlabel{Nestjs}
+      \chartlabel{Azure}
       \chartlabel{SQL}
-      \chartlabel{AI/ML}
-      \chartlabel{Data Analysis}
-      \chartlabel{Data pipelines}
+      \chartlabel{GoLang}
+      \chartlabel{C\#}
+      \chartlabel{Java}
       \chartlabel{Docker}
-      \chartlabel{Streamlit/Dash}
       \chartlabel{Linux}
-      \chartlabel{Ansible}
       \chartlabel{CI/CD}
-      \chartlabel{Prometheus stack}
+      \chartlabel{GatsbyJS}
+      \chartlabel{NextJS}
     \end{center}
   \end{sidebarminipage}
-
-
-
-    % Add contact details at the bottom
-  \sidesection{Social Network}
-  \begin{icontable}{2.5em}{1em}
-    \social{\faLinkedin}
-    {https://www.linkedin.com/in/jakobaaes}{linkedin.com/in/jakobaaes}
-    \social{\faGithub}
-    {https://github.com/jakob1379/}
-    {github.com/jakob1379/}
-  \end{icontable}
-
-  \sidesection{Contact}
-  \begin{icontable}{2.5em}{1em}
-    \personal{\faBirthdayCake}{July $24^{th}$, 1993}
-    \personal{\faMapMarker}{\href{https://www.google.com/maps/place/2400+København+NV}{København NV}}
-    \personal{\faPhone}{\href{tel:+4593978373}{+45 93 97 83 73}}
-    \personal{\faEnvelope}{\href{mailto:jakob1379@gmail.com}{jakob1379@gmail.com}}
-  \end{icontable}
-
 }
 
-% NOTE: ordering in sidebar will mimic the following order
-% date of birth
+% Personal Information in sidebar
 \cvbirthday{Febuary 7, 1991}
-% short address/location, use \newline if more than 1 line is required
-\cvaddress{Park Ave.~1, 555 555 B-Woods}
-% phone number
+\cvaddress{V. A. Borgens Vej 8, st th, 2450 København}
 \cvphone{+45 4224 2372}
-% personal website
 \cvsite{https://guldberglab.info}
-% email address
 \cvmail{daniel@guldberglab.info}
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 1st PAGE
 %-------------------------------------------------------------------------------
-% add more profile sections to sidebar on first page
 \addtofrontsidebar{
-	% include gosquare national flags from https://github.com/gosquared/flags;
-	% naming according to ISO 3166-1 alpha-2 country codes
-	\graphicspath{{pics/gosquared-flags/flags/flags-iso/shiny/64}}
-
-	% social network accounts incl. proper hyperlinks
+	% social network accounts
 	\sidesection{Social Network}
-		\begin{icontable}[2]{2em}{2em}
-			\social{\faLinkedin}
-				{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}
-				{Linkedin}
-			\social{\faGithub}
-				{https://github.com/notaduck}
-				{Github}
+		\begin{icontable}[2]{1.2em}{1em}
+			\social{\faLinkedin}{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}{LinkedIn} 
+			\social{\faGithub}{https://github.com/notaduck}{Github}
 		\end{icontable}
-
-	\sidesection{Languages}
-		\pointskill{\flag{DK.png}}{Danish}{5}
-	\pointskill{\flag{GB.png}}{English}{4}
-
-	\sidesection{Hard Skills}
-		\skill{\faBalanceScale}{Sleeping almost all day}
-		\skill{\faSitemap}{Eating a lot of bamboo sprouts}
-		\skill{\faGraduationCap}{Relaxing rest of the day}
-
-	\sidesection{Soft Skills}
-		\pointskill{\faHome}{Looking Cute}{4}[4]
-			\skill[1.8em]{\faCompress}{No need to specify further}
-		\pointskill{\faChild}{Chillin' hard}{3}[4]
-			\skill[1.8em]{\faCompress}{On a tree}
-			\skill[1.8em]{\faCompress}{In the grass}
 }
 
-
 %-------------------------------------------------------------------------------
-%                              SIDEBAR 2nd PAGE
+%                              CV SECTION
 %-------------------------------------------------------------------------------
-\definecolor{pastelgreen}{HTML}{D7ECD9}
-\definecolor{pastelpurple}{HTML}{D5D6EA}
-\definecolor{pastelorange}{HTML}{F5D5CB}
-\definecolor{pastelyellow}{HTML}{F6F6EB}
-
-\addtobacksidebar{
-	\sidesection{About Me}
-	\aboutme{
-		The giant panda is a terrestrial animal and primarily spends its life
-		roaming and feeding in the bamboo forests of the Qinling Mountains and in
-		the hilly province of Sichuan.
-	}
-
-	\sidesection{Diagrams}
-	\begin{sidebarminipage}
-		\chartlabel[pastelgreen]{Bubble}
-		\chartlabel[pastelgreen]{Diagrams}
-		\chartlabel[pastelpurple]{with}
-		\chartlabel[pastelpurple]{proper}
-		\chartlabel[pastelorange]{overflow}
-		\chartlabel[pastelorange]{protection}
-		\chartlabel[pastelyellow]{for}
-		\chartlabel[pastelyellow]{labels}
-	\end{sidebarminipage}
-
-	\begin{figure}\centering
-		\smartdiagram[bubble diagram]{
-			\textcolor{white}{\textbf{Being a}} \\
-			\textcolor{white}{\textbf{Panda}}, % center bubble
-			\textcolor{black!90}{Eating},
-			\textcolor{black!90}{Sleeping},
-			\textcolor{black!90}{Rolling},
-			\textcolor{black!90}{Playing},
-			\textcolor{black!90}{Chilling}
-		}
-	\end{figure}
-
-	\chartlabel{Wheel Chart}
-
-	\wheelchart{3.7em}{2em}{%
-	20/3em/maincolor!50/Chill,
-	15/3em/maincolor!15/Play,
-	30/4em/maincolor!40/Sleep,
-	20/3em/maincolor!20/Eat
-	}
-
-	\sidesection{Barskills}
-	\barskill[1ex]{\faSkyatlas}{Wearing asian rice hats}{60}
-	\barskill[2ex]{\faImage}{Playing Chess}{30}
-	\barskill[3ex]{\faMusic}{Playing the bamboo flute}{50}
-
-	\sidesection{Memberships}
-	\begin{memberships}
-		\membership[4em]{pics/logo.png}{PandaScience.net}
-		\membership[4em]{pics/logo.png}{Some longer text spanning over more than
-			only one line}
-	\end{memberships}
+% Custom cvsection with TikZ for styling using Montserrat for headings
+\renewcommand*{\cvsection}[1]{%
+  \vspace{3pt}
+  \begin{tikzpicture}
+    \node[fill=Peach, text width=\linewidth, rounded corners=3pt, inner sep=5pt] {\headingfont\color{black}\normalfont\bfseries\LARGE #1};
+  \end{tikzpicture}
+  \vspace{8pt}
 }
 
 
@@ -320,128 +152,83 @@
 
 \makefrontsidebar
 
+
+\cvsection{Personal Profile x}
+
+\begin{cvtable}[1]
+	\cvitemshort{\hphantom}
+	{
+		I enjoy exploring new technologies, and I am motivated by diverse and varied tasks. It is meaningful to me to automate workflows, making processes even more efficient than they already are. I like working with frontend development, as it is satisfying to deliver a quality product, and I also enjoy backend development, where the underlying functionality lies. I value working in teams where there is the opportunity for collaboration and knowledge sharing.
+	}
+\end{cvtable}
+
 \cvsection{Working Experience}
 \begin{cvtable}[3]
-	\cvitem{currently}{CEO The Panda Way}{Start Up}{Chief executive officer, Head
-		developer and yoga ambassador of 'The Panda Way' - A company from pandas
-		for pandas.}
-	\cvitem{05/2015 -- 08/2018}{Panda Scientist}{Bamboo University}{
-		Reasearching the impact of adequate bamboo nutrition compared to
-		conventional feeding methods.}
-	\cvitem{2010 -- 2015}{Bamboo Broker}{Stock Exchange}{Continuously achieving
-		better bamboo bangs for the buck.}
+	\cvitem{currently}
+	{Indigo Underwriters}
+	{Insurance Company}
+	{
+At Indigo Underwriters, my primary role is as a software developer where I create frontend and backend solutions. I developed a CRM system in 365 for claims handling to automate their workflow and have focused on database optimization. Additionally, I work a lot with setting up Azure services as well as configuring CI/CD to make the transition from development to production easier and more error-free.
+}
+	\cvitem{2020 -}
+	{Ulduniverset}
+	{}
+	{I explored the possibilities of setting up an online store. I advised on the selection of an e-commerce system and set up the shop. I also taught entrepreneurs how to use the system themselves, so they could continuously adjust the shop.}
+	\cvitem{2009-2017}
+	{Social and Health Care}
+	{}
+	{For several years, I worked in various positions in the social and healthcare sector. This gave me solid experience in working in teams across different professional groups.}
 \end{cvtable}
-
 
 \cvsection{Education}
-\cvsubsection{Postgraduate Training}
+\begin{cvtable}[3]
+	\cvitem{\hphantom}
+	{Bsc of Science in Software Development}
+	{IT university of copenhagen}
+	{My elective courses during my bachelor's degree focused on Security as well as Development and IT operations (DevOps).}
+
+	\cvitem{\hphantom}
+	{HF}
+	{KVUC}
+	{Two-year upper secondary education.}
+
+\end{cvtable}
+
+\cvsection{Projects}
 \begin{cvtable}[1.5]
-	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academyx}
-		{In-depth studies on the impact of bamboo nutrition for young pandas and
-		its relation to relaxing, sleeping and snoozing parts of the day.}
-	\cvitem{2008 -- 2009}{Research Stay Europe}{European Panda Labs}
-		{Spending one year abroad teaching european panda facilities about the
-		newest findings and research in the field of asian rice hat covers and
-		applications for bamboo as a material.}
+    \cvitem{2024 -- Present}{Functional Dependencies Finder}{Personal Project}{\textbf{Challenge}: We were tasked with manually finding all simple functional dependencies in a given database. \\
+    \textbf{Solution}: I automated the entire process to avoid running manual SQL queries. The implementation is written in Java 13.x and works with any arbitrary database in PostgreSQL.}
+    
+    \cvitem{2024 -- Present}{GuldbergLab Blog}{Personal Project}{Developed using React with Gatsby, a static site generator. Posts are written in Markdown and converted to React components. \\
+    Currently migrating from WordPress, which hosted over 40 articles about server setup for various Linux systems and applications. The site is not fully built yet.}
+    
+    \cvitem{2024 -- Present}{NADA Svendborg}{Client Project}{\textbf{Challenge}: A voluntary organization's WordPress website was infected with malware. \\
+    \textbf{Solution}: The WordPress site was too complex for their needs, so I developed a single-page application written in React. This made the system more secure by only containing the necessary functionality. (The site is currently being launched.)}
+    
+    \cvitem{2024 -- Present}{Rejs Alligevel}{Webshop Project}{Rejs Alligevel is a webshop that sells travel insurance. The frontend is written in React/Gatsby with integration to third-party widget solution providers. The backend is developed using NodeJS/Nest, generating PDF documents and integrating closely with Shopify.}
 \end{cvtable}
 
+% \cvsection{Publications}
+% \begin{cvtable}
+% 	\cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda Friends}{Panda's Culinary World}{2010}
+% 	\cvpubitem{Pandastasia}{Still Me}{Bamboo Books Assoc.}{2005}
+% \end{cvtable}
 
-\cvsubsection{Study}
-\begin{cvtable}[1.5]
-	\cvitem{2006 -- 2008}{Master Studies Panda Science}{Panda Academy}
-		{Focus: Advanced rice hat studies and nouveau rain-reflecting cover
-		materials.}
-	\cvitem{}{Master Thesis ($\varnothing\, 1,0$)}{Asian Rice Hat Institute}
-		{Impact of solar radiation onto rice hat cover materials with special
-		attention to water resistance.}
-	\cvitem{2003 -- 2006}{Bachelor Studies PandaScience}{Panda Academy}
-		{Focus: Bamboo morphology and its usage in different craftmanships.}
-	\cvitem{}{Bachelor Thesis ($\varnothing\, 1,0$)}{Bamboo Institute}
-		{The bambo flute: An underestimated instrument in orchestras?}
-\end{cvtable}
+% \cvsection{Awards}
+% \begin{cvtable}
+% 	\cvitem{2010 -- now}{Panda of the Year}{Panda World Forum}{}
+% 	\cvitem{2005 -- now}{Face of World Wide Fund for Nature}{WWF}{}
+% 	\cvitem{2000}{Winner of Bamboo Sprouts Eating Contest}{Bamboo Society}{}
+% \end{cvtable}
 
-\cvsection{Publications}
-\begin{cvtable}
-	\cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda Friends}
-		{Panda's Culinary World}{2010}
-	\cvpubitem{Pandastasia}{Still Me}{Bamboo Books Assoc.}{2005}
-\end{cvtable}
+% \cvsection{Projects}
+% \begin{cvtable}
+% 	\cvitemshort{Relaxing}{Master the fine art of relaxing everywhere}
+% 	\cvitemshort{Music}{Playing the bamboo flute in the 1st Panda Orchestra}
+% 	\cvitemshort{Education}{Teaching young pandas to be more panda-like}
+% \end{cvtable}
 
-\cvsection{Awards}
-\begin{cvtable}
-	\cvitem{2010 -- now}{Panda of the Year}{Panda World Forum}{}
-	\cvitem{2005 -- now}{Face of World Wide Fund for Nature}{WWF}{}
-	\cvitem{2000}{Winner of Bamboo Sprouts Eating Contest}{Bamboo Society}{}
-\end{cvtable}
-
-
-\cvsection{Extra-Curricular Activities}
-\begin{cvtable}
-	\cvitemshort{Relaxing}{Master the fine art of relaxing everywhere}
-	\cvitemshort{Music}{Playing the bamboo flute in the 1st Panda Orchestra}
-	\cvitemshort{Education}{Teaching young pandas to be more panda-like}
-\end{cvtable}
-
-
-\newpage
+% \newpage
 \makebacksidebar
-% \newgeometry{
-% 	top=\topbottommargin,
-% 	bottom=\topbottommargin,
-% 	right=\leftrightmargin,
-% 	left=\leftrightmargin
-% }
-
-\cvsection{section}
-\cvsubsection{Subsection}
-\begin{cvtable}
-	\cvitem{<dates>}{<cv-item title>}{<location>}{<optional: description>}
-\end{cvtable}
-
-\cvsection{cvitem}
-\cvsubsection{Multi-line with longer description}
-\begin{cvtable}
-	\cvitem{date}{Description}{location}{Some longer and more detailed
-		description, that takes two lines of space instead of only one.}
-	\cvitem{date}{Description}{location}{Some longer and more detailed
-		description, that takes two lines of space instead of only one.}
-	\cvitem{date}{Description}{location}{Some longer and more detailed
-		description, that takes two lines of space instead of only one.}
-\end{cvtable}
-
-\cvsubsection{One-line without description}
-\begin{cvtable}
-	\cvitem{Award}{One-line description}{Sponsor}{}
-	\cvitem{Award}{One-line description}{Sponsor}{}
-	\cvitem{Award}{One-line description}{Sponsor}{}
-\end{cvtable}
-
-\cvsection{cvitemshort}
-\cvsubsection{One-line}
-\begin{cvtable}
-	\cvitemshort{Key}{Some further description}
-	\cvitemshort{Key}{Some further description}
-	\cvitemshort{Key}{Some further description}
-\end{cvtable}
-
-\cvsubsection{Multi-line with longer description}
-\begin{cvtable}
-	\cvitemshort{Key}{Some further description. Can fill even more than
-		only one single line while still keeping the correct indendation level.}
-	\cvitemshort{Key}{Some further description. Can fill even more than
-		only one single line while still keeping the correct indendation level.}
-	\cvitemshort{Key}{Some further description. Can fill even more than
-		only one single line while still keeping the correct indendation level.}
-\end{cvtable}
-
-\cvsection{cvpubitem}
-\begin{cvtable}
-	\cvpubitem{Publication title}{Authors}{Journal}{Year}
-	\cvpubitem{Publication title}{Authors}{Journal}{Year}
-	\cvpubitem{Publication title that is spanning over multiple lines and still
-		does not look too bad}{Authors}{Journal}{Year}
-\end{cvtable}
-
-\cvsignature
 
 \end{document}

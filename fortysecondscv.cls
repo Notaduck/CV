@@ -310,11 +310,11 @@
 \newcommand{\nameandjob}{%
     {\cvnameformat\cvname}\par%
     \setlength{\parskip}{2ex}%
-    \vspace{0.4em}% Add space between job title and the line
+    \vspace{0.0em}% Add space between job title and the line
     {\Large\color{White}\cvjobtitle}\par% Use \Large and \color{Peach} to match the original settings
-    % \vspace{0.1em}% Add space between job title and the line
+    \vspace{-1.5em}% Add space between job title and the line
     \noindent\color{Peach}\rule{\linewidth}{1pt}\par % Peach-colored horizontal line
-    \vspace{0.4em}% Add space after the line
+    \vspace{0.0em}% Add space after the line
 }
 
 % mandatory personal information
@@ -370,12 +370,13 @@
 % icon can be taken from FontAwesome or Academicon for example
 \newcommand{\personaldata}{}
 \newcommand*{\cvcustomdata}[2]{%
-	\apptocmd{\personaldata}{\personal{#1}{#2}}{}{}%
+    \apptocmd{\personaldata}{\personal{\textcolor{Peach}{#1}}{#2}}{}{}%
 }
 
 % useful shortcuts
 % NOTE: we use href instead of url so user can decide textformatting since url
 % automatically uses \texttt{} as format for the url
+
 \newcommand*{\cvbirthday}[1]{\cvcustomdata{\faUser}{#1}}
 \newcommand*{\cvaddress}[1]{\cvcustomdata{\faEnvelope}{#1}}
 \newcommand*{\cvphone}[1]{\cvcustomdata{\faPhone}{\href{tel:#1}{#1}}}
@@ -466,17 +467,16 @@
 
 % icon style for personal information
 \newcommand*\circleicon[1]{%
-	\tikz[baseline = (char.base)]{%
-		\node[%
-			shape=circle,%
-			draw,%
-			inner sep=1pt,%
-			fill=iconcolor,%
-			maincolor,%
-			text=white,%
-			minimum size=\hsize%
-		] (char) {#1};%
-	}%
+    \tikz[baseline = (char.base)]{%
+        \node[%
+            shape=circle,%
+            draw,%
+            inner sep=1pt,%
+            fill=sidecolor, % This changes the background color to match the sidebar
+            text=Peach, % Set the icon color to Peach
+            minimum size=\hsize%
+        ] (char) {#1};%
+    }%
 }
 
 % icon style for social network
