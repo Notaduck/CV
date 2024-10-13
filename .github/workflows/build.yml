@@ -22,7 +22,7 @@ jobs:
           root_file: template.tex
           #extra_fonts: |
            # ./fonts/*.otf
-          args: -pdf -file-line-error -interaction=nonstopmode -jobname="./DANIEL_GULDBERG_AAES_CV" template.tex     
+          args: -pdf -file-line-error -interaction=nonstopmode -jobname=./DANIEL_GULDBERG_AAES_CV template.tex     
           #continue-on-error: true # Continue even if there's an error
 
       # Rename the output file to Daniel_Guldberg_Aaes_CV.pdf
