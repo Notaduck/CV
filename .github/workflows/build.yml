@@ -20,10 +20,10 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: template.tex
-          extra_fonts: |
-            ./fonts/*.otf
+          #extra_fonts: |
+           # ./fonts/*.otf
           args: -f      
-          continue-on-error: true # Continue even if there's an error
+          #continue-on-error: true # Continue even if there's an error
 
       # Rename the output file to Daniel_Guldberg_Aaes_CV.pdf
       - name: Rename output PDF
