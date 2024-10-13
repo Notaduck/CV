@@ -16,13 +16,17 @@ jobs:
         run: echo "GITHUB_RUN_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_ENV
 
       - name: Compile LaTeX document
+        id: latex_build
         uses: xu-cheng/latex-action@v3
         with:
           root_file: template.tex
           extra_fonts: |
             ./fonts/*.otf
+        continue-on-error: true # Continue even if there's an error
 
+      # Upload the PDF only if it was successfully created
       - name: Upload PDF file
+        if: success()
         uses: softprops/action-gh-release@v2
         with:
           prerelease: true
@@ -30,3 +34,12 @@ jobs:
           tag_name: nightly
           files: template.pdf
           fail_on_unmatched_files: true
+
+      # Check if template.log exists and upload it as an artifact
+      - name: Upload LaTeX log if compilation fails
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: latex-log
+          path: template.log
+          if-no-files-found: ignore
