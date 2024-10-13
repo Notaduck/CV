@@ -42,6 +42,10 @@
 % Define the custom color
 \usepackage{xcolor}
 
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{shellesc}
+
 % Apply the custom color
 \colorlet{sidecolor}{DarkGrayBlue}
 \colorlet{sidetextcolor}{white}
@@ -52,8 +56,9 @@
 \usepackage{microtype}
 \usepackage{ragged2e}
 
+
 % uncomment in case you don't want any hyphenation
-% \usepackage[none]{hyphenat}
+\usepackage[none]{hyphenat}
 
 % take care of proper font encoding
 \ifxetexorluatex
@@ -83,7 +88,7 @@
 % your name
 \cvname{Daniel Guldberg Aaes}
 % job title/career
-\cvjobtitle{Software Engineer}
+\cvjobtitle{Fullstack Engineer}
 
 % profile picture
 \cvprofilepic{pics/profile.jpg}
@@ -91,17 +96,17 @@
 \addtofrontsidebar{
   \sidesection{Soft Skills}
   \skill{\faLightbulb}{Knowledge-Driven and seeking Innovation}
-  \skill{\faPrayingHands}{Considerate and thoughtful}
+  \skill{\faPrayingHands}{Thrive in Team-Oriented and Collaborative Environments}
 
   \sidesection{Skills}
   \begin{sidebarminipage}
     \begin{center}
       \chartlabel{Javascript}
+      \chartlabel{Go}
       \chartlabel{Typesciprt}
       \chartlabel{Nestjs}
       \chartlabel{Azure}
       \chartlabel{SQL}
-      \chartlabel{GoLang}
       \chartlabel{C\#}
       \chartlabel{Java}
       \chartlabel{Docker}
@@ -111,10 +116,23 @@
       \chartlabel{NextJS}
     \end{center}
   \end{sidebarminipage}
+
+
+\sidesection{Languages}
+  \graphicspath{{pics/gosquared-flags/flags/flags-iso/shiny/64}}
+  \skill{\textbullet}{Danish}{}
+  \skill{\textbullet}{English}{}
+
+\sidesection{Social Network}
+	\begin{icontable}[2]{1.2em}{1em}
+		\social{\faLinkedin}{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}{LinkedIn} 
+		\social{\faGithub}{https://github.com/notaduck}{Github}
+	\end{icontable}
+
 }
 
 % Personal Information in sidebar
-\cvbirthday{Febuary 7, 1991}
+% \cvbirthday{Febuary 7, 1991}
 \cvaddress{V. A. Borgens Vej 8, st th, 2450 København}
 \cvphone{+45 4224 2372}
 \cvsite{https://guldberglab.info}
@@ -123,14 +141,14 @@
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 1st PAGE
 %-------------------------------------------------------------------------------
-\addtofrontsidebar{
-	% social network accounts
-	\sidesection{Social Network}
-		\begin{icontable}[2]{1.2em}{1em}
-			\social{\faLinkedin}{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}{LinkedIn} 
-			\social{\faGithub}{https://github.com/notaduck}{Github}
-		\end{icontable}
-}
+% \addtofrontsidebar{
+% 	% social network accounts
+% 	\sidesection{Social Network}
+% 		\begin{icontable}[2]{1.2em}{1em}
+% 			\social{\faLinkedin}{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}{LinkedIn} 
+% 			\social{\faGithub}{https://github.com/notaduck}{Github}
+% 		\end{icontable}
+% }
 
 %-------------------------------------------------------------------------------
 %                              CV SECTION
@@ -146,89 +164,82 @@
 
 
 %-------------------------------------------------------------------------------
+%                              FOOTER 
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+% Dynamic URL using shell command to read the environment variable
+\fancyfoot[C]{\small Document generated using \href{\expandafter\shellesc{echo $GITHUB_RUN_URL}}{GitHub Actions}}
+
+
+%-------------------------------------------------------------------------------
 %                         TABLE ENTRIES RIGHT COLUMN
 %-------------------------------------------------------------------------------
 \begin{document}
 
 \makefrontsidebar
 
+\cvsection{About me}
 
-\cvsection{Personal Profile x}
-
-\begin{cvtable}[1]
-	\cvitemshort{\hphantom}
+	\cvitem{\hphantom}
+	{\hphantom}
+	{\hphantom}
 	{
-		I enjoy exploring new technologies, and I am motivated by diverse and varied tasks. It is meaningful to me to automate workflows, making processes even more efficient than they already are. I like working with frontend development, as it is satisfying to deliver a quality product, and I also enjoy backend development, where the underlying functionality lies. I value working in teams where there is the opportunity for collaboration and knowledge sharing.
+ I am experienced in working closely with end users and product owners. I thrive in collaborative teams where I can engage in meaningful discussions with colleagues. I enjoy developing new applications and value the opportunity to monitor their performance, allowing me to make continuous improvements where necessary
 	}
-\end{cvtable}
+
+\vspace{25px}
+
+
 
 \cvsection{Working Experience}
 \begin{cvtable}[3]
 	\cvitem{currently}
 	{Indigo Underwriters}
-	{Insurance Company}
+	{Fullstack Engineer}
 	{
-At Indigo Underwriters, my primary role is as a software developer where I create frontend and backend solutions. I developed a CRM system in 365 for claims handling to automate their workflow and have focused on database optimization. Additionally, I work a lot with setting up Azure services as well as configuring CI/CD to make the transition from development to production easier and more error-free.
-}
-	\cvitem{2020 -}
+		Developing frontend, API's and various backend services written in Go, Typescript and Database management and optimisaztion. Data integration between various enviroments, Azure services, Kubernetes, \& Docker alongside building CI/CD pipelines for faster and nearly error-free deployments. 
+	}
+
+	\cvitem{2020 - }
 	{Ulduniverset}
-	{}
-	{I explored the possibilities of setting up an online store. I advised on the selection of an e-commerce system and set up the shop. I also taught entrepreneurs how to use the system themselves, so they could continuously adjust the shop.}
+	{Software Consultant}
+	{
+	Advising on the selection of an e-commerce system and setting up the shop together with a POS system. I taught entrepreneurs how to use the system themselves.}
+
 	\cvitem{2009-2017}
-	{Social and Health Care}
+	{Social and Health Care Services}
 	{}
-	{For several years, I worked in various positions in the social and healthcare sector. This gave me solid experience in working in teams across different professional groups.}
+	{
+	Working in various positions, which gave me a solid experience in working in teams across different professional groups.
+	}
 \end{cvtable}
+
+
+\vspace{25px}
 
 \cvsection{Education}
 \begin{cvtable}[3]
-	\cvitem{\hphantom}
+	\cvitem{2020}
 	{Bsc of Science in Software Development}
-	{IT university of copenhagen}
-	{My elective courses during my bachelor's degree focused on Security as well as Development and IT operations (DevOps).}
+	{IT University of Copenhagen}
+	{
+	My elective courses focused on Security as well as Development and IT operations (DevOps). I deepened my skills in working in teams and sparring with fellow students
+	}
+\end{cvtable}
+
+\vspace{25px}
+
+\cvsection{Who am i}
 
 	\cvitem{\hphantom}
-	{HF}
-	{KVUC}
-	{Two-year upper secondary education.}
+	{\hphantom}
+	{\hphantom}
+	{
 
-\end{cvtable}
+	   In my spare time, I enjoy cycling, whether on my road or gravel bike. I have a wife and two daughters, and we often spend our weekends together in our allotment garden. 
+	   I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally.
+	}
 
-\cvsection{Projects}
-\begin{cvtable}[1.5]
-    \cvitem{2024 -- Present}{Functional Dependencies Finder}{Personal Project}{\textbf{Challenge}: We were tasked with manually finding all simple functional dependencies in a given database. \\
-    \textbf{Solution}: I automated the entire process to avoid running manual SQL queries. The implementation is written in Java 13.x and works with any arbitrary database in PostgreSQL.}
-    
-    \cvitem{2024 -- Present}{GuldbergLab Blog}{Personal Project}{Developed using React with Gatsby, a static site generator. Posts are written in Markdown and converted to React components. \\
-    Currently migrating from WordPress, which hosted over 40 articles about server setup for various Linux systems and applications. The site is not fully built yet.}
-    
-    \cvitem{2024 -- Present}{NADA Svendborg}{Client Project}{\textbf{Challenge}: A voluntary organization's WordPress website was infected with malware. \\
-    \textbf{Solution}: The WordPress site was too complex for their needs, so I developed a single-page application written in React. This made the system more secure by only containing the necessary functionality. (The site is currently being launched.)}
-    
-    \cvitem{2024 -- Present}{Rejs Alligevel}{Webshop Project}{Rejs Alligevel is a webshop that sells travel insurance. The frontend is written in React/Gatsby with integration to third-party widget solution providers. The backend is developed using NodeJS/Nest, generating PDF documents and integrating closely with Shopify.}
-\end{cvtable}
 
-% \cvsection{Publications}
-% \begin{cvtable}
-% 	\cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda Friends}{Panda's Culinary World}{2010}
-% 	\cvpubitem{Pandastasia}{Still Me}{Bamboo Books Assoc.}{2005}
-% \end{cvtable}
-
-% \cvsection{Awards}
-% \begin{cvtable}
-% 	\cvitem{2010 -- now}{Panda of the Year}{Panda World Forum}{}
-% 	\cvitem{2005 -- now}{Face of World Wide Fund for Nature}{WWF}{}
-% 	\cvitem{2000}{Winner of Bamboo Sprouts Eating Contest}{Bamboo Society}{}
-% \end{cvtable}
-
-% \cvsection{Projects}
-% \begin{cvtable}
-% 	\cvitemshort{Relaxing}{Master the fine art of relaxing everywhere}
-% 	\cvitemshort{Music}{Playing the bamboo flute in the 1st Panda Orchestra}
-% 	\cvitemshort{Education}{Teaching young pandas to be more panda-like}
-% \end{cvtable}
-
-% \newpage
-\makebacksidebar
 
 \end{document}
