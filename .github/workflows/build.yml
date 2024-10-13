@@ -12,6 +12,9 @@ jobs:
         with:
           submodules: true
 
+      - name: Set GITHUB_RUN_URL environment variable
+        run: echo "GITHUB_RUN_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_ENV
+
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
