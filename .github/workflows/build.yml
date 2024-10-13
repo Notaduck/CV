@@ -24,6 +24,11 @@ jobs:
             ./fonts/*.otf
         continue-on-error: true # Continue even if there's an error
 
+      # Rename the output file to Daniel_Guldberg_Aaes_CV.pdf
+      - name: Rename output PDF
+        if: success()
+        run: mv -f template.pdf Daniel_Guldberg_Aaes_CV.pdf
+
       # Upload the PDF only if it was successfully created
       - name: Upload PDF file
         if: success()
@@ -32,7 +37,7 @@ jobs:
           prerelease: true
           name: nightly
           tag_name: nightly
-          files: template.pdf
+          files: Daniel_Guldberg_Aaes_CV.pdf
           fail_on_unmatched_files: true
 
       # Check if template.log exists and upload it as an artifact
