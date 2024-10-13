@@ -1,47 +1,16 @@
-% FortySecondsCV LaTeX template
-% Copyright © 2019-2022 René Wirnata <rene.wirnata@pandascience.net>
-% Licensed under the 3-Clause BSD License. See LICENSE file for details.
-%
-% Please visit https://github.com/PandaScience/FortySecondsCV for the most
-% recent version! For bugs or feature requests, please open a new issue on
-% github.
-
 %-------------------------------------------------------------------------------
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
 
 \documentclass[
-	a4paper,
-	% 9pt,
-	% sidesectionsize=Large,
-	% showframes,
-	% vline=2.2em,
-	% maincolor=cvgreen,
-	% sidecolor=DarkGrayBlue,
-	% sidetextcolor=green,
-	% sectioncolor=red,
-	% subsectioncolor=orange,
-	% itemtextcolor=black!80,
-	% sidebarwidth=0.4\paperwidth,
-	% topbottommargin=0.03\paperheight,
-	% leftrightmargin=20pt,
-	% profilepicsize=4.5cm,
-	% profilepicborderwidth=3.5pt,
-	profilepicstyle=profilecircle,
-	% profilepiczoom=1.0,
-	% profilepicxshift=0mm,
-	% profilepicyshift=0mm,
-	% profilepicrounding=1.0cm,
-	% logowidth=4.5cm,
-	% logospace=5mm,
-	% logoposition=before,
-	% sidebarplacement=right,
-	% datecolwidth=0.22\textwidth,
+    a4paper,
+    profilepicstyle=profilecircle,
 ]{fortysecondscv}
+
 
 % Define the custom color
 \usepackage{xcolor}
-
+\usepackage{fontawesome5}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{shellesc}
@@ -52,47 +21,40 @@
 \colorlet{cvname}{DarkGrayBlue}
 \colorlet{sectioncolor}{DarkGrayBlue}
 
-% improve word spacing and hyphenation
+% Improve word spacing and hyphenation
 \usepackage{microtype}
 \usepackage{ragged2e}
 
+% Uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
 
-% uncomment in case you don't want any hyphenation
-\usepackage[none]{hyphenat}
-
-% take care of proper font encoding
+% Font encoding and fonts
 \ifxetexorluatex
-	\usepackage{fontspec}
-	\defaultfontfeatures{Ligatures=TeX}
+    \usepackage{fontspec}
+    \setmainfont{Montserrat Light} % Ensure this font is installed
+    \newfontfamily\headingfont{Montserrat}
 \else
-	\usepackage[utf8]{inputenc}
-	\usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{lmodern}
+    \newcommand{\headingfont}{\sffamily}
 \fi
 
-% \ifxetexorluatex
-%   \usepackage{fontspec}
-%   \setmainfont{Montserrat Light} % Use Montserrat Light for body text
-%   \newfontfamily\headingfont{Montserrat} % Use Montserrat for headings
-% \else
-%   \usepackage[utf8]{inputenc}
-%   \usepackage[T1]{fontenc}
-%   \usepackage{lmodern}
-% \fi
-
-% use a sans serif font as default
+% Use a sans serif font as default
 \usepackage[sfdefault]{ClearSans}
 
 %-------------------------------------------------------------------------------
 %                            PERSONAL INFORMATION
 %-------------------------------------------------------------------------------
-% your name
+% Your name
 \cvname{Daniel Guldberg Aaes}
-% job title/career
+% Job title/career
 \cvjobtitle{Fullstack Engineer}
 
-% profile picture
+% Profile picture
 \cvprofilepic{pics/profile.jpg}
 
+% Add to front sidebar
 \addtofrontsidebar{
   \sidesection{Soft Skills}
   \skill{\faLightbulb}{Knowledge-Driven and seeking Innovation}
@@ -103,7 +65,7 @@
     \begin{center}
       \chartlabel{Javascript}
       \chartlabel{Go}
-      \chartlabel{Typesciprt}
+      \chartlabel{Typescript}
       \chartlabel{Nestjs}
       \chartlabel{Azure}
       \chartlabel{SQL}
@@ -117,38 +79,22 @@
     \end{center}
   \end{sidebarminipage}
 
+  \sidesection{Languages}
+    \skill{\textbullet}{Danish (Native)}{}
+    \skill{\textbullet}{English (Advanced)}{}
 
-\sidesection{Languages}
-  \graphicspath{{pics/gosquared-flags/flags/flags-iso/shiny/64}}
-  \skill{\textbullet}{Danish (Native)}{}
-  \skill{\textbullet}{English (Advanced)}{}
-
-\sidesection{Social Network}
-	\begin{icontable}[2]{1.2em}{1em}
-		\social{\faLinkedin}{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}{LinkedIn} 
-		\social{\faGithub}{https://github.com/notaduck}{Github}
-	\end{icontable}
-
+  \sidesection{Social Network}
+    \begin{icontable}[2]{1.2em}{1em}
+      \social{\faLinkedin}{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}{LinkedIn} 
+      \social{\faGithub}{https://github.com/notaduck}{Github}
+    \end{icontable}
 }
 
 % Personal Information in sidebar
-% \cvbirthday{Febuary 7, 1991}
 \cvaddress{V. A. Borgens Vej 8, st th, 2450 København}
 \cvphone{+45 4224 2372}
 \cvsite{https://guldberglab.info}
 \cvmail{daniel@guldberglab.info}
-
-%-------------------------------------------------------------------------------
-%                              SIDEBAR 1st PAGE
-%-------------------------------------------------------------------------------
-% \addtofrontsidebar{
-% 	% social network accounts
-% 	\sidesection{Social Network}
-% 		\begin{icontable}[2]{1.2em}{1em}
-% 			\social{\faLinkedin}{https://www.linkedin.com/in/daniel-guldberg-aaes-12145b180/}{LinkedIn} 
-% 			\social{\faGithub}{https://github.com/notaduck}{Github}
-% 		\end{icontable}
-% }
 
 %-------------------------------------------------------------------------------
 %                              CV SECTION
@@ -162,13 +108,13 @@
   \vspace{8pt}
 }
 
-
 %-------------------------------------------------------------------------------
 %                              FOOTER 
 %-------------------------------------------------------------------------------
+\setlength{\headheight}{12pt}
+\setlength{\footskip}{13pt}
 \pagestyle{fancy}
-\fancyfoot[C]{\small Document generated using \underline{\href{\expandafter\shellesc{echo $GITHUB_RUN_URL}}{GitHub Actions}}}
-
+\fancyfoot[C]{\small Document generated using \underline{\href{https://github.com/your-repo/actions}{GitHub Actions}}}
 
 %-------------------------------------------------------------------------------
 %                         TABLE ENTRIES RIGHT COLUMN
@@ -179,65 +125,52 @@
 
 \cvsection{About me}
 
-	\cvitem{\hphantom}
-	{\hphantom}
-	{\hphantom}
-	{
-	 I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO's Customer \& Channel Management team. I enjoy developing applications and follow their life-cycles.
-	}
+\cvitemshort{\hphantom}{I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO's Customer \& Channel Management team. I enjoy developing applications and follow their life-cycles.}
 
 \vspace{25px}
 
-
-
 \cvsection{Working Experience}
 \begin{cvtable}[3]
-	\cvitem{currently}
-	{Indigo Underwriters}
-	{Fullstack Engineer}
-	{
-		Developing frontend, API's and various backend services written in Go, Typescript and Database management and optimisaztion. Data integration between various enviroments, Azure services, Kubernetes, \& Docker alongside building CI/CD pipelines for faster and nearly error-free deployments. 
-	}
+  \cvitem{currently}
+  {Indigo Underwriters}
+  {Fullstack Engineer}
+  {
+    Developing frontend, APIs, and various backend services written in Go, Typescript, and database management and optimization. Data integration between various environments, Azure services, Kubernetes, Docker alongside building CI/CD pipelines for faster and nearly error-free deployments.
+  }
 
-	\cvitem{2020 - }
-	{Ulduniverset}
-	{Software Consultant}
-	{
-	Advising on the selection of an e-commerce system and setting up the shop together with a POS system. I taught entrepreneurs how to use the system themselves.}
+  \cvitem{2020 - }
+  {Ulduniverset}
+  {Software Consultant}
+  {
+    Advising on the selection of an e-commerce system and setting up the shop together with a POS system. I taught entrepreneurs how to use the system themselves.
+  }
 
-	\cvitem{2009-2017}
-	{Social and Health Care Services}
-	{}
-	{
-	Working in various positions, which gave me a solid experience in working in teams across different professional groups.
-	}
+  \cvitem{2009-2017}
+  {Social and Health Care Services}
+  {}
+  {
+    Working in various positions, which gave me solid experience in working in teams across different professional groups.
+  }
 \end{cvtable}
-
 
 \vspace{25px}
 
 \cvsection{Education}
 \begin{cvtable}[3]
-	\cvitem{2020}
-	{Bsc of Science in Software Development}
-	{IT University of Copenhagen}
-	{
-	My elective courses focused on Security as well as Development and IT operations (DevOps). I deepened my skills in working in teams and sparring with fellow students
-	}
+  \cvitem{2020}
+  {BSc of Science in Software Development}
+  {IT University of Copenhagen}
+  {
+    My elective courses focused on Security as well as Development and IT operations (DevOps). I deepened my skills in working in teams and sparring with fellow students.
+  }
 \end{cvtable}
 
 \vspace{25px}
 
-\cvsection{Who am I?}
+\cvsection{Who am I?xx}
 
-	\cvitem{\hphantom}
-	{\hphantom}
-	{\hphantom}
-	{
-
-	   In my spare time, I enjoy cycling, whether on my road or gravel bike. I have two daughters and I look forward to getting started with LEGO MINDSTORMS and PyBricks so they can learn how to get started with programming as well, and we often spend our weekends together in our allotment garden. I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally.
-	}
-
-
+\cvitemshort{\hphantom}{
+  In my spare time, I enjoy cycling, whether on my road or gravel bike. I have two daughters and I look forward to getting started with LEGO MINDSTORMS and PyBricks so they can learn how to get started with programming as well, and we often spend our weekends together in our allotment garden. I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally.
+}
 
 \end{document}
