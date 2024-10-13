@@ -22,7 +22,7 @@ jobs:
           root_file: template.tex
           #extra_fonts: |
            # ./fonts/*.otf
-          args: -f      
+          args: -pdf -file-line-error -interaction=nonstopmode -jobname="./DANIEL_GULDBERG_AAES_CV" template.tex     
           #continue-on-error: true # Continue even if there's an error
 
       # Rename the output file to Daniel_Guldberg_Aaes_CV.pdf
@@ -38,14 +38,5 @@ jobs:
           prerelease: true
           name: nightly
           tag_name: nightly
-          files: Daniel_Guldberg_Aaes_CV.pdf
+          files: DANIEL_GULDBERG_AAES_CV.pdf
           fail_on_unmatched_files: true
-
-      # Check if template.log exists and upload it as an artifact
-      - name: Upload LaTeX log if compilation fails
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: latex-log
-          path: template.log
-          if-no-files-found: ignore
