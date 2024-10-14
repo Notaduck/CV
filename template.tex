@@ -4,9 +4,7 @@
 
 \documentclass[
     a4paper,
-    profilepicstyle=profilecircle,
 ]{fortysecondscv}
-
 
 % Define the custom color
 \usepackage{xcolor}
@@ -14,6 +12,7 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{shellesc}
+\usepackage{lmodern}  % Use Latin Modern as the fallback font
 
 % Apply the custom color
 \colorlet{sidecolor}{DarkGrayBlue}
@@ -52,7 +51,7 @@
 \cvjobtitle{Fullstack Engineer}
 
 % Profile picture
-\cvprofilepic{pics/profile.png}
+\cvprofilepic{pics/profile.eps}  % Use EPS version for compatibility with DVI mode
 
 % Add to front sidebar
 \addtofrontsidebar{
@@ -121,11 +120,11 @@
 %-------------------------------------------------------------------------------
 \begin{document}
 
+\sloppy  % Allow more flexibility in line-breaking to prevent overfull boxes
+
 \makefrontsidebar
-
 \cvsection{About me}
-
-\cvitemshort{\hphantom}{I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO's Customer \& Channel Management team. I enjoy developing applications and follow their life-cycles.}
+\cvitemshort{\hphantom}{I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO's Customer Channel Management team. I enjoy developing applications and following their life-cycles.}
 
 \vspace{25px}
 
@@ -135,7 +134,7 @@
   {Indigo Underwriters}
   {Fullstack Engineer}
   {
-    Developing frontend, APIs, and various backend services written in Go, Typescript, and database management and optimization. Data integration between various environments, Azure services, Kubernetes, Docker alongside building CI/CD pipelines for faster and nearly error-free deployments.
+    Developing frontend, APIs, and various backend services written in Go, Typescript, and managing databases. Performing data integration between various environments, Azure services, Kubernetes, Docker, alongside building CI/CD pipelines for faster and nearly error-free deployments.
   }
 
   \cvitem{2020 - }
@@ -170,7 +169,7 @@
 \cvsection{Who am I?}
 
 \cvitemshort{\hphantom}{
-  In my spare time, I enjoy cycling, whether on my road or gravel bike. I have two daughters and I look forward to getting started with LEGO MINDSTORMS and PyBricks so they can learn how to get started with programming as well, and we often spend our weekends together in our allotment garden. I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally.
+  In my spare time, I enjoy cycling, whether on my road or gravel bike. I have two daughters, and I look forward to getting started with LEGO MINDSTORMS and PyBricks so they can learn how to get started with programming as well. We often spend our weekends together in our allotment garden. I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally.
 }
 
 \end{document}
