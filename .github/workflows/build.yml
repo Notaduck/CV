@@ -19,7 +19,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: template.tex
-          args: --job-name=DANIEL_GULDBERG_AAES_CV
+          args: "--job-name=DANIEL_GULDBERG_AAES_CV"
 
       # Upload the PDF only if it was successfully created
       - name: Upload PDF file
