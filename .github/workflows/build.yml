@@ -11,7 +11,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
-
       - name: Set GITHUB_RUN_URL environment variable
         run: echo "GITHUB_RUN_URL=https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_ENV
 
@@ -20,15 +19,7 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: template.tex
-          #extra_fonts: |
-           # ./fonts/*.otf
-          #args: -pdf -file-line-error -interaction=nonstopmode  
-          #continue-on-error: true # Continue even if there's an error
-
-      # Rename the output file to Daniel_Guldberg_Aaes_CV.pdf
-      - name: Rename output PDF
-        if: success()
-        run: mv -f template.pdf Daniel_Guldberg_Aaes_CV.pdf
+          args: --job-name=DANIEL_GULDBERG_AAES_CV
 
       # Upload the PDF only if it was successfully created
       - name: Upload PDF file
