@@ -10,9 +10,9 @@
 \usepackage{xcolor}
 \usepackage{fontawesome5}
 \usepackage{fancyhdr}
-\usepackage{hyperref}
 \usepackage{shellesc}
 \usepackage{lmodern}  % Use Latin Modern as the fallback font
+\usepackage{hyperref}
 
 % Apply the custom color
 \colorlet{sidecolor}{DarkGrayBlue}
@@ -75,6 +75,7 @@
       \chartlabel{CI/CD}
       \chartlabel{GatsbyJS}
       \chartlabel{NextJS}
+      \chartlabel{Automated testing}
     \end{center}
   \end{sidebarminipage}
 
@@ -111,9 +112,12 @@
 %                              FOOTER 
 %-------------------------------------------------------------------------------
 \setlength{\headheight}{12pt}
-\setlength{\footskip}{13pt}
+\setlength{\footskip}{20pt} % Increased footskip to ensure space for footer
 \pagestyle{fancy}
-\fancyfoot[C]{\small Document generated using \underline{\href{https://github.com/your-repo/actions}{GitHub Actions}}}
+
+% Clear any existing footer settings
+\fancyhf{}
+\fancyfoot[C]{\small Document generated using \href{https://github.com/Notaduck/CV/actions/runs/11343229669/workflow}{\underline{GitHub Actions}}}
 
 %-------------------------------------------------------------------------------
 %                         TABLE ENTRIES RIGHT COLUMN
@@ -123,10 +127,13 @@
 \sloppy  % Allow more flexibility in line-breaking to prevent overfull boxes
 
 \makefrontsidebar
-\cvsection{About me}
 
+\cvsection{About me}
 \begin{cvtable}[1]
- \cvitemshort{\hphantom}{I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO's Customer Channel Management team. I enjoy developing applications and following their life-cycles.}
+
+ % \cvitemshort{\hphantom}{I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO.  I enjoy developing applications and following their life-cycles.}
+
+ \cvitemshort{\hphantom}{ With experience collaborating closely with end users and product owners, I will draw on this experience at LEGO to develop innovative solutions. \par I am passionate about not only developing solutions but also actively engaging in every stage of their life cycles, ensuring they evolve to meet user or business requirements.}
  \vspace{25px}
 \end{cvtable}
 
@@ -136,7 +143,7 @@
   {Indigo Underwriters}
   {Fullstack Engineer}
   {
-    Developing frontend, APIs, and various backend services written in Go, Typescript, and managing databases. Performing data integration between various environments, Azure services, Kubernetes, Docker, alongside building CI/CD pipelines for faster and nearly error-free deployments.
+    Developing frontend, APIs, and various backend services written in Go, Typescript, and managing databases. Performing data integration between various environments, Azure services, Kubernetes, Docker, alongside building CI/CD pipelines for faster and nearly error-free deployments with automated unit and end to end test.
   }
 
   \cvitem{2020 - }
@@ -162,7 +169,8 @@
   {BSc of Science in Software Development}
   {IT University of Copenhagen}
   {
-    My elective courses focused on Security as well as Development and IT operations (DevOps). I deepened my skills in working in teams and sparring with fellow students.
+    My elective courses focused on Security as well as Development and IT operations (DevOps).
+    I deepened my skills in working in teams and sparring with fellow students.
   }
 \end{cvtable}
 
@@ -172,7 +180,11 @@
 
 \begin{cvtable}[1]
   \cvitemshort{\hphantom}{
-    In my spare time, I enjoy cycling, whether on my road or gravel bike. I have two daughters, and I look forward to getting started with LEGO MINDSTORMS and PyBricks so they can learn how to get started with programming as well. We often spend our weekends together in our allotment garden. I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally.}
+    In my spare time, I enjoy cycling, whether on my road or gravel bike. I have two daughters, and I look forward to getting started with LEGO MINDSTORMS and PyBricks so they can learn how to get started with programming as well. We often spend our weekends together in our allotment garden. I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally. \linebreak
+
+    Another hobby of mine is to build custom keyboards and play around with them to be as ergonomic and efficient as possible.
+
+  }
 \end{cvtable}
 
 \end{document}
