@@ -10,3 +10,4 @@ tmp/*
 *out
 test*
 README.html
+.DS_Store

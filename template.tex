@@ -56,8 +56,8 @@
 % Add to front sidebar
 \addtofrontsidebar{
   \sidesection{Soft Skills}
-  \skill{\faLightbulb}{Knowledge-Driven and seeking Innovation}
-  \skill{\faPrayingHands}{Thrive in Team-Oriented and Collaborative Environments}
+  \skill{\faLightbulb}{Knowledge-driven and seeking innovation}
+  \skill{\faPrayingHands}{Thrive in team-oriented and collaborative environments}
 
   \sidesection{Skills}
   \begin{sidebarminipage}
@@ -76,6 +76,7 @@
       \chartlabel{GatsbyJS}
       \chartlabel{NextJS}
       \chartlabel{Automated testing}
+      \chartlabel{Test Containers}
     \end{center}
   \end{sidebarminipage}
 
@@ -90,8 +91,61 @@
     \end{icontable}
 }
 
+\addtobacksidebar{
+
+    \graphicspath{{pics/flags/shiny/}}
+
+    \profilesection{Soft Skills}
+		% \cvsubsection{Soft Skills}
+			% ---------------STYLE: BAR-------------------
+			\begin{sidebarminipage}\raggedright
+                % \chartlabel{Leadership}
+                % \chartlabel{Team building}
+                \chartlabel{Goal driven}
+                \chartlabel{Detail oriented}
+                \chartlabel{Effective communication}
+                \chartlabel{Resilience}
+                % \chartlabel{Planning}
+                \chartlabel{Collaboration}
+                % \chartlabel{Time management}
+                \chartlabel{Creating new alternatives}
+                \chartlabel{Problem solving}
+			\end{sidebarminipage}
+			% \barskill{\faSkyatlas}{Focus on goals}{95}
+			% \barskill{\faImage}{Attention to detail}{95}
+			% \barskill{\faMusic}{ and team work}{95}
+			% \barskill{\faMusic}{}{95}
+			% \barskill{\faMusic}{Resilience}{95}
+
+	% \profilesection{Languages}
+ %        \pointskill{\flag{GB.png}}{English}{5}
+ %        \pointskill{\flag{DE.png}}{German}{4}
+ %        \pointskill{\flag{IT.png}}{Italian}{4}
+ %        \pointskill{\flag{IN.png}}{Hindi}{5}
+	% 	\pointskill{\flag{IN.png}}{Haryanavi}{5}
+	% 	\pointskill{\flag{IN.png}}{Punjabi}{4}
+	% 	\pointskill{\flag{IN.png}}{Urdu}{3}
+
+	\profilesection{Interests}
+		\begin{figure}\centering
+			\smartdiagram[bubble diagram]{
+				\textcolor{white}{\textbf{Travelling}}, % center bubble
+				\textcolor{black!90}{Cooking},
+				\textcolor{black!90}{Languages} \\
+				\textcolor{black!90}{Dialects} \\
+				\textcolor{black!90}{Accents},
+				\textcolor{black!90}{Basketball},
+				% \textcolor{black!90}{Programming},
+				\textcolor{black!90}{Solving} \\
+				\textcolor{black!90}{Puzzles},
+				\textcolor{black!90}{New} \\
+				\textcolor{black!90}{technology}
+			}
+		\end{figure}
+}
+
 % Personal Information in sidebar
-\cvaddress{V. A. Borgens Vej 8, st th, 2450 København}
+\cvaddress{V. A. Borgens Vej 8, st th,  2450 København}
 \cvphone{+45 4224 2372}
 \cvsite{https://guldberglab.info}
 \cvmail{daniel@guldberglab.info}
@@ -128,22 +182,39 @@
 
 \makefrontsidebar
 
-\cvsection{About me}
-\begin{cvtable}[1]
-
- % \cvitemshort{\hphantom}{I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO.  I enjoy developing applications and following their life-cycles.}
-
- \cvitemshort{\hphantom}{ With experience collaborating closely with end users and product owners, I will draw on this experience at LEGO to develop innovative solutions. \par I am passionate about not only developing solutions but also actively engaging in every stage of their life cycles, ensuring they evolve to meet user or business requirements.}
- \vspace{25px}
-\end{cvtable}
+% \cvsection{About me}
+% \begin{cvtable}[1]
+%
+%  % \cvitemshort{\hphantom}{I am experienced in working closely with end users and product owners. I will draw on this experience at LEGO.  I enjoy developing applications and following their life-cycles.}
+%
+%  \cvitemshort{\hphantom}{ With experience collaborating closely with end users and product owners, I will draw on this experience at LEGO to develop innovative solutions. \par I am passionate about not only developing solutions but also actively engaging in every stage of their life cycles, ensuring they evolve to meet user and/or business requirements.}
+%  \vspace{25px}
+% \end{cvtable}
 
 \cvsection{Working Experience}
 \begin{cvtable}[3]
-  \cvitem{currently}
+
+  \cvitem{2025 - Present }
+  {Indigo Underwriters}
+  {Software Engineer Consultant}
+  {
+Continue to provide consultancy on matters beyond the team's capabilities, offering hands-on support with the code when necessary. 
+Assist and advise employees, providing guidance on technical and strategic challenges.
+  }
+
+  \cvitem{2021 - 2024 }
   {Indigo Underwriters}
   {Fullstack Engineer}
   {
-    Developing frontend, APIs, and various backend services written in Go, Typescript, and managing databases. Performing data integration between various environments, Azure services, Kubernetes, Docker, alongside building CI/CD pipelines for faster and nearly error-free deployments with automated unit and end to end tests.
+    As the sole full-time software developer in the company I was responsible for developing frontend, APIs, and various backend services written in Typescript, Go, and managing databases. I performed data integration between various environments, Azure services, Kubernetes, Docker, alongside building CI/CD pipelines for faster and nearly error-free deployments with automated unit and end-to-end tests. Furthermore, I supervised and mentored a student developer, including task delegation, technical guidance, and professional development.
+  }
+
+
+  \cvitem{2021 - 2021}
+  {Indigo Underwriters}
+  {Student Software Engineer}
+  {
+    I developed a Dynamics 365 CRM claims handling system to improve the way the company handled insurance claims and how they should be processed by the claim handlers.
   }
 
   \cvitem{2020 - }
@@ -183,8 +254,9 @@
     In my spare time, I enjoy cycling, whether on my road or gravel bike. I have two daughters, and I look forward to getting started with LEGO MINDSTORMS and PyBricks so they can learn how to get started with programming as well. We often spend our weekends together in our allotment garden. I am also an avid reader of programming articles and love exploring new technologies, always eager to learn and grow both personally and professionally. \linebreak
 
     Another hobby of mine is to build custom keyboards and play around with them to be as ergonomic and efficient as possible.
-
   }
 \end{cvtable}
+
+\newpage
 
 \end{document}
