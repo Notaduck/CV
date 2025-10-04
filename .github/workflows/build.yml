@@ -27,7 +27,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           prerelease: true
-          name: cv
+          name: CV
           tag_name: latest
           files: DANIEL_GULDBERG_AAES_CV.pdf
           fail_on_unmatched_files: true
